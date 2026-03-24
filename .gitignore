@@ -1,0 +1,7 @@
+venv/
+*.zip
+*.pyc
+__pycache__/
+runs/
+*.pt
+*.onnx
