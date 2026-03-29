@@ -1,0 +1,6 @@
+train: c:\Users\OG\Desktop\Machine Learning\Computer Vision\saudi-plate-recognition\1stModel_plate_detector\data\train\images
+val:   c:\Users\OG\Desktop\Machine Learning\Computer Vision\saudi-plate-recognition\1stModel_plate_detector\data\valid\images
+test:  c:\Users\OG\Desktop\Machine Learning\Computer Vision\saudi-plate-recognition\1stModel_plate_detector\data\test\images
+
+nc: 1
+names: ['license_plate']

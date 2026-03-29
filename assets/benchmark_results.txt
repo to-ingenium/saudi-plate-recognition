@@ -1,0 +1,11 @@
+Saudi Plate Recognition — Benchmark Results
+Test image : test 1.jpg
+Warmup: 5 | Timed: 50
+
+Model        Format   Size (MB)    Avg ms/frame     Notes
+─────────────────────────────────────────────────────────────────
+Detector     PT       21.5         7.0              GPU · PyTorch stack · development/server
+Detector     ONNX     21.4         88.5             CPU · edge runtime · no GPU required · +1% size
+Reader       PT       21.5         7.8              GPU · PyTorch stack · development/server
+Reader       ONNX     21.4         88.2             CPU · edge runtime · no GPU required · +1% size
+─────────────────────────────────────────────────────────────────

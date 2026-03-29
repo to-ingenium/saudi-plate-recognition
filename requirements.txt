@@ -69,3 +69,4 @@ ultralytics==8.4.26
 ultralytics-thop==2.0.18
 urllib3==2.6.3
 wcwidth==0.6.0
+python-dotenv
