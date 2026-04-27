@@ -1,6 +1,12 @@
-train: c:\Users\OG\Desktop\Machine Learning\Computer Vision\saudi-plate-recognition\1stModel_plate_detector\data\train\images
-val:   c:\Users\OG\Desktop\Machine Learning\Computer Vision\saudi-plate-recognition\1stModel_plate_detector\data\valid\images
-test:  c:\Users\OG\Desktop\Machine Learning\Computer Vision\saudi-plate-recognition\1stModel_plate_detector\data\test\images
-
+names:
+- License_Plate
 nc: 1
-names: ['license_plate']
+roboflow:
+  license: CC BY 4.0
+  project: license-plate-recognition-rxg4e
+  url: https://universe.roboflow.com/roboflow-universe-projects/license-plate-recognition-rxg4e/dataset/13
+  version: 13
+  workspace: roboflow-universe-projects
+test: ../test/images
+train: ../train/images
+val: ../valid/images

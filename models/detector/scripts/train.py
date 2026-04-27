@@ -25,29 +25,30 @@ if __name__ == "__main__":
 
     model = YOLO("yolov8s.pt")
 
-    augmentations = [
-        A.BBoxSafeRandomCrop(p=0.5),
-        A.Resize(640, 640),
-        A.RandomBrightnessContrast(p=0.2),
-        A.HorizontalFlip(p=0.5),
-        A.OneOf([
-            A.CoarseDropout(num_holes_range=(1, 2), hole_height_range=(0.1, 0.25),
-                            hole_width_range=(0.1, 0.25), p=1.0),
-            A.GridDropout(ratio=0.5, unit_size_range=(10, 20), p=1.0)
-        ], p=0.5)
-    ]
+    # augmentations = [
+    #     A.BBoxSafeRandomCrop(p=0.5),
+    #     A.Resize(640, 640),
+    #     A.RandomBrightnessContrast(p=0.2),
+    #     A.HorizontalFlip(p=0.5),
+    #     A.OneOf([
+    #         A.CoarseDropout(num_holes_range=(1, 2), hole_height_range=(0.1, 0.25),
+    #                         hole_width_range=(0.1, 0.25), p=1.0),
+    #         A.GridDropout(ratio=0.5, unit_size_range=(10, 20), p=1.0)
+    #     ], p=0.5)
+    # ]
 
     model.train(
         data         = str(DATA_YAML),
-        epochs       = 50,
+        epochs       = 25,
         imgsz        = 640,
-        batch        = 16,
+        batch        = 32,
         workers      = 2,
         patience     = 10,
         project      = str(BASE_DIR),
         name         = "train",
         exist_ok     = True,
-        augmentations= augmentations,
+        # augmentations= augmentations,
+        device       = 0
     )
 
     # ── Copy best weights ─────────────────────────────────────────────────────

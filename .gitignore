@@ -3,7 +3,8 @@ venv/
 *.pyc
 __pycache__/
 runs/
-*.pt
 *.onnx
 .env
 .claude
+models/detector/data/
+models/reader/data/

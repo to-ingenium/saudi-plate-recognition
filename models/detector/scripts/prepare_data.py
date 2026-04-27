@@ -11,10 +11,9 @@ DATA_DIR = BASE_DIR / "data"
 
 DATASETS = [
     {
-        "workspace": "cars-o2wwf",
-        "project":   "saudi-licence-plates",
-        "version":   3,
-        "class_map": {"LP": "license_plate"}
+        "workspace": "roboflow-universe-projects",
+        "project":   "license-plate-recognition-rxg4e",
+        "version":   13,
     },
 ]
 
@@ -26,9 +25,9 @@ for ds in DATASETS:
     project = rf.workspace(ds["workspace"]).project(ds["project"])
     data    = project.version(ds["version"]).download(
                 "yolov8",
-                location=str(DATA_DIR / "raw")
+                location=str(DATA_DIR)
               )
-    downloaded.append((data.location, ds["class_map"]))
+    downloaded.append((data.location, ds.get("class_map", {})))
 
 # ── Collect + remap ───────────────────────────────────────────────────────────
 all_pairs = []
@@ -91,7 +90,7 @@ names: ['license_plate']
 """)
 
 # ── Clean up raw download ─────────────────────────────────────────────────────
-shutil.rmtree(DATA_DIR / "raw")
+shutil.rmtree(DATA_DIR)
 print(f"Done — data ready at: {DATA_DIR}")
 
 
